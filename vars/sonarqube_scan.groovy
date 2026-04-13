@@ -1,9 +1,12 @@
 def call() {
+    def scannerHome = tool 'SonarScanner'
+    
     withSonarQubeEnv('Sonar') {
-        sh '''
-        sonar-scanner \
-        -Dsonar.projectKey=my-project \
-        -Dsonar.sources=. \
-        '''
+        sh """
+        ${scannerHome}/bin/sonar-scanner \
+        -Dsonar.projectKey=wanderlust \
+        -Dsonar.projectName=wanderlust \
+        -Dsonar.sources=.
+        """
     }
 }
