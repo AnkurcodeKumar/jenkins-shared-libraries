@@ -1,5 +1,5 @@
 def call() {
-    withSonarQubeEnv('sonarqube-server') {
+    withSonarQubeEnv('Sonar') {
         sh '''
         sonar-scanner \
         -Dsonar.projectKey=my-project \
